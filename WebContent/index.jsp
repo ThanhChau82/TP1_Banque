@@ -18,11 +18,11 @@
 			      <form action="AuthServlet" method="get" class="row g-3">
 					  <div class="col-auto">
 					    <label for="login" class="visually-hidden">login</label>
-					    <input type="text" required name="login"  class="form-control" id="login" placeholder="Login">
+					    <input type="text" required pattern="[a-zA-Z0-9]+{4,30}" name="login" class="form-control" id="login" placeholder="Login">
 					  </div>
 					  <div class="col-auto">
 						<label for="inputPassword2" class="visually-hidden">Password</label>
-						<input type="password" required name="mdp" class="form-control" id="inputPassword2" placeholder="Password">
+						<input type="password" required pattern="[a-zA-Z0-9]+{4,30}" name="mdp" class="form-control" id="inputPassword2" placeholder="Password">
 					  </div>
 					  <div class="col-auto">
 					    <button type="submit" class="btn btn-primary mb-3">Se connecter</button>
