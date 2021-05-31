@@ -13,7 +13,7 @@
 	    </div>
 	    
 	    <div class="col">
-			<form method="post">
+			<form method="get" action="ClientServlet">
 			  <div class="mb-3">
 			    <label for="exampleInputnom1" class="form-label">nom </label>
 			    <input type="text" pattern="[a-z A-Z]{4,30}" required name="nom" class="form-control" id="exampleInputnom1" >
@@ -28,7 +28,7 @@
 			  </div>
 			  <div class="mb-3">
 			    <label for="tel" class="form-label">Téléphone</label>
-			    <input type="text" pattern="[+0-9]{8,}"  required name="telephone" class="form-control" id="telephone">
+			    <input type="text" pattern="[+0-9]{8,}" required name="telephone" class="form-control" id="telephone">
 			  </div>
 			   <div class="mb-3">
 			    <label for="adresse" class="form-label">Adresse</label>
@@ -36,7 +36,7 @@
 			  </div>
 			  <div class="mb-3">
 			    <label for="tel" class="form-label">Code application</label>
-			    <input type="text" pattern="[0-9]{8,12}"  required name="code" class="form-control" id="code">
+			    <input type="text" pattern="[0-9]{8,12}" required name="code" class="form-control" id="code">
 			  </div>
 			  <button type="submit" class="btn btn-primary">Ajouter</button>
 			</form>    

@@ -9,6 +9,7 @@ public class Client {
 	private String telephone;
 	private int codeApplication;
 	private double solde;
+	
 	public Client() {
 		super();
 	}
