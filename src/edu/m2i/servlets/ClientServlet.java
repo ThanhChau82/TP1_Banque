@@ -21,7 +21,7 @@ public class ClientServlet extends HttpServlet {
 	
 	private ValidateBanque validateBanque = new ValidateBanque();
 	
-	private ClientService clientService = new ClientServiceImpl();
+	private ClientService clientService;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -46,15 +46,14 @@ public class ClientServlet extends HttpServlet {
 			paramPrenom != null && !paramPrenom.isBlank() && 
 			paramTel!= null && !paramTel.isBlank() && 
 			paramAdresse != null && !paramAdresse.isBlank() &&
-			paramCode != null && paramCode.isBlank()) {
+			paramCode != null && !paramCode.isBlank()) {
 			
 			int codeAppli = validateBanque.convertirInteger(paramCode);
-			Client client = new Client(paramNom, paramPrenom, paramEmail, paramAdresse, paramCode, codeAppli, 0);
+			Client client = new Client(paramNom, paramPrenom, paramEmail, paramAdresse, paramTel, codeAppli, 0);
+			clientService = new ClientServiceImpl();
 			clientService.saveClient(client);
-//			boolean isverifClientOK = validateBanque.verifClient(client);
-//			System.out.println("Verifier client OK : " + isverifClientOK);
 			
-			request.getRequestDispatcher("/client.jsp").forward(request, response);
+			request.getRequestDispatcher("/action.jsp").forward(request, response);
 		}
 	}
 

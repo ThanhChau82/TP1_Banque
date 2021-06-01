@@ -35,7 +35,7 @@ public class ClientDAOImpl implements ClientDAO {
 			prepareStatement.executeUpdate();
 			System.out.println("Client ajouté avec succès");
 			connexion.close();
-			System.out.println("Connexion fermée");
+			System.out.println("Connexion client fermée");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

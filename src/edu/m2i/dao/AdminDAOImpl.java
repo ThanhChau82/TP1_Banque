@@ -27,7 +27,7 @@ public class AdminDAOImpl implements AdminDAO {
 				isAuthentificationOK = true;
 				System.out.println("Authentification OK");
 				connexion.close();
-				System.out.println("Connexion fermée");
+				System.out.println("Connexion authentification fermée");
 			} 
 			
 		} catch (SQLException e) {

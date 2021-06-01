@@ -24,8 +24,7 @@ public class ValidateBanque {
 	 */
 	public boolean verifClient(Client client) {
 		boolean isChampsObligatoiresOK = verifChaineNonNull(client.getNom(), client.getPrenom(), 
-				client.getEmail(), client.getAdresse(), client.getTelephone(),
-				String.valueOf(client.getSolde()), String.valueOf(client.getCodeApplication()));
+				client.getEmail(), client.getAdresse(), client.getTelephone(), String.valueOf(client.getCodeApplication()));
 		boolean isEmailOK = verifEmail(client.getEmail());
 		boolean isTelOK = verifTel(client.getTelephone());
 		boolean isCodeAppliOK = verifCodeAppli(client.getCodeApplication());

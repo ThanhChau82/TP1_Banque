@@ -17,7 +17,7 @@
 		    <div class="col">
 			      <form action="AuthServlet" method="get" class="row g-3">
 					  <div class="col-auto">
-					    <label for="login" class="visually-hidden">login</label>
+					    <label for="login" class="visually-hidden">Login</label>
 					    <input type="text" required pattern="[a-zA-Z0-9]+{4,30}" name="login" class="form-control" id="login" placeholder="Login">
 					  </div>
 					  <div class="col-auto">

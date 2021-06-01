@@ -29,7 +29,11 @@ public class ClientServiceImpl implements ClientService {
 	@Override
 	public boolean saveClient(Client client) {
 		validator = new ValidateBanque();
-		if (validator.verifClient(client)) {			
+		System.out.println("Appelle validator ok");
+		boolean verifClient = validator.verifClient(client);
+		System.out.println("vérif client OK :" + verifClient );
+		if (verifClient) {
+			System.out.println("Verif OK");
 			clientDAO.addClient(client);
 			return true;
 		} else {
