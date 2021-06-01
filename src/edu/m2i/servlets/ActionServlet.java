@@ -65,7 +65,8 @@ public class ActionServlet extends HttpServlet {
 				// Ajouter une action pour ce client.s
 				actionService = new ActionServiceImpl();
 				if (actionService.saveAction(action, client)) {
-					request.getRequestDispatcher("/listeActions.jsp").forward(request, response);
+					response.sendRedirect("listeActions.jsp");
+//					request.getRequestDispatcher("/listeActions.jsp").forward(request, response);
 				} else {
 					messageErreurAction = "Echec d'ajout de l'action";
 					request.setAttribute("erreurSaveAction", messageErreurAction);

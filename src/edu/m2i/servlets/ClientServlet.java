@@ -54,7 +54,8 @@ public class ClientServlet extends HttpServlet {
 			clientService = new ClientServiceImpl();
 			boolean isSaveClientOK = clientService.saveClient(client);
 			if (isSaveClientOK) {
-				request.getRequestDispatcher("/action.jsp").forward(request, response);
+				response.sendRedirect("action.jsp");
+//				request.getRequestDispatcher("/action.jsp").forward(request, response);
 			} else {
 				messageErreurClient = "Echec d'ajout du client";
 				request.setAttribute("erreurSaveClient", messageErreurClient);
