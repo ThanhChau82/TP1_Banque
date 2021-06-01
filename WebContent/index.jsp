@@ -30,9 +30,9 @@
 					  </div>
 					  
 					  <!-- Afficher le message d'erreur -->
-					  <div class="col-auto">
-					  	<%	if(request.getAttribute("erreur") != null) { %>
-							<%=request.getAttribute("erreur") %>
+					  <div class="alert alert-danger" role="alert">
+					  	<%	if(request.getAttribute("erreurAuthentification") != null) { %>
+							<%=request.getAttribute("erreurAuthentification") %>
 						<% } %>
 					  </div>	
 				  </form>

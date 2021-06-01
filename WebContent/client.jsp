@@ -18,8 +18,8 @@
 	    <div class="col">
 			<form method="get" action="ClientServlet">
 			  <div class="mb-3">
-			    <label for="exampleInputnom1" class="form-label">Nom </label>
-			    <input type="text" pattern="[a-z A-Z]{4,30}" required name="nom" class="form-control" id="exampleInputnom1" >
+			    <label for="nom" class="form-label">Nom </label>
+			    <input type="text" pattern="[a-z A-Z]{4,30}" required name="nom" class="form-control" id="nom" >
 			  </div>
 			  <div class="mb-3">
 			    <label for="prenom" class="form-label">Prénom</label>
@@ -30,7 +30,7 @@
 			    <input type="email" required name="email" class="form-control" id="email">
 			  </div>
 			  <div class="mb-3">
-			    <label for="tel" class="form-label">Téléphone</label>
+			    <label for="telephone" class="form-label">Téléphone</label>
 			    <input type="text" pattern="[+0-9]{8,}" required name="telephone" class="form-control" id="telephone">
 			  </div>
 			   <div class="mb-3">
@@ -38,10 +38,17 @@
 			    <textarea  required name="adresse" class="form-control" id="adresse"></textarea>
 			  </div>
 			  <div class="mb-3">
-			    <label for="tel" class="form-label">Code application</label>
+			    <label for="code" class="form-label">Code application</label>
 			    <input type="text" pattern="[0-9]{8,12}" required name="code" class="form-control" id="code">
 			  </div>
-			  <button type="submit" class="btn btn-primary">Ajouter</button>
+			  <div class="mb-3">
+			  	<button type="submit" class="btn btn-primary">Ajouter</button>
+			  </div>
+			  <div class="alert alert-danger" role="alert" >
+			  	<%	if(request.getAttribute("erreurSaveClient") != null) { %>
+					<%=request.getAttribute("erreurSaveClient") %>
+				<% } %>
+			  </div>			  
 			</form>    
 		</div>
 		
