@@ -38,6 +38,8 @@ public class AuthentificationServlet extends HttpServlet {
 		if (adminService.authentifier(new Admin(paramLogin, paramMdp))) {
 			request.getRequestDispatcher("/client.jsp").forward(request, response);
 		} else {
+			String messageErreur = "Login/Mdp erroné(s)";
+			request.setAttribute("erreur", messageErreur);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 		

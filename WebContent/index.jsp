@@ -27,12 +27,19 @@
 					  <div class="col-auto">
 					    <button type="submit" class="btn btn-primary mb-3">Se connecter</button>
 					    <br>					    
+					  </div>
+					  
+					  <!-- Afficher le message d'erreur -->
+					  <div class="col-auto">
+					  	<%	if(request.getAttribute("erreur") != null) { %>
+							<%=request.getAttribute("erreur") %>
+						<% } %>
 					  </div>	
 				  </form>
 		    </div>
 		    <div class="col">
 		    </div>
   		</div>
-	</div>
+	</div>	
 </body>
 </html>
