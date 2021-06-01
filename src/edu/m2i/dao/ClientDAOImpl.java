@@ -57,7 +57,7 @@ public class ClientDAOImpl implements ClientDAO {
 				System.out.println("Client trouvé");
 				client = (Client) resultat.getObject(0);
 				connexion.close();
-				System.out.println("Connexion fermée");
+				System.out.println("Connexion recherche client fermée");
 			} 
 			
 		} catch (SQLException e) {

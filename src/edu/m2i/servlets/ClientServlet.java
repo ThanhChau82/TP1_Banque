@@ -42,7 +42,7 @@ public class ClientServlet extends HttpServlet {
 		String paramAdresse = request.getParameter("adresse");
 		String paramCode = request.getParameter("code");
 		
-		String erreur = "";
+		String messageErreurClient = "";
 		if (paramNom != null && !paramNom.isBlank() &&  
 			paramPrenom != null && !paramPrenom.isBlank() && 
 			paramTel!= null && !paramTel.isBlank() && 
@@ -53,17 +53,17 @@ public class ClientServlet extends HttpServlet {
 			Client client = new Client(paramNom, paramPrenom, paramEmail, paramAdresse, paramTel, codeAppli, 0);
 			clientService = new ClientServiceImpl();
 			boolean isSaveClientOK = clientService.saveClient(client);
-			if (isSaveClientOK) {				
+			if (isSaveClientOK) {
 				request.getRequestDispatcher("/action.jsp").forward(request, response);
 			} else {
-				erreur = "Echec d'ajout du client";
-				request.setAttribute("erreurSaveClient", erreur);
+				messageErreurClient = "Echec d'ajout du client";
+				request.setAttribute("erreurSaveClient", messageErreurClient);
 				request.getRequestDispatcher("/client.jsp").forward(request, response);
 			}
 			
 		} else {			
-			erreur = "Paramètre(s) null(s) ou blank(s)";
-			request.setAttribute("erreurSaveClient", erreur);
+			messageErreurClient = "Paramètre(s) null(s) ou blank(s)";
+			request.setAttribute("erreurSaveClient", messageErreurClient);
 			request.getRequestDispatcher("/client.jsp").forward(request, response);
 		}
 	}

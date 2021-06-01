@@ -39,7 +39,7 @@ public class ValidateBanque {
 	 * @return
 	 */
 	public boolean verifAction(Action action, Client client) {
-		boolean isChampsObligatoiresOK = verifChaineNonNull(action.getDate_heure(), String.valueOf(action.getMontant()), action.getType());
+		boolean isChampsObligatoiresOK = verifChaineNonNull(String.valueOf(action.getMontant()), action.getType());
 		boolean isMontantOK = verifMontant(action.getMontant());
 		boolean isTypeOK = verifType(action.getType());
 		boolean isRetraitOK = true;

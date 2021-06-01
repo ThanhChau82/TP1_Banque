@@ -29,12 +29,12 @@
 					    <br>					    
 					  </div>
 					  
-					  <!-- Afficher le message d'erreur -->
-					  <div class="alert alert-danger" role="alert">
-					  	<%	if(request.getAttribute("erreurAuthentification") != null) { %>
+					  <!-- Afficher le message d'erreur -->					  
+					  <%if(request.getAttribute("erreurAuthentification") != null) { %>
+					  	<div class="alert alert-danger" role="alert">
 							<%=request.getAttribute("erreurAuthentification") %>
-						<% } %>
-					  </div>	
+						</div>	
+					  <% } %>					  
 				  </form>
 		    </div>
 		    <div class="col">
